@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sushimenu>
+  <section name="Starters">
+    <entree>
+      <item>Prawn Tempura</item>
+      <price>6.00</price>
+    </entree>
+    <entree>
+      <item>Ceviche</item>
+      <price>8.00</price>
+    </entree>
+    <entree>
+      <item>Sunomono</item>
+      <price>7.00</price>
+    </entree>
+    <entree>
+      <item>Shimeji</item>
+      <price>6.00</price>
+    </entree>
+    <entree>
+      <item>Miso Soup</item>
+      <price>3.50</price>
+    </entree>
+    <entree vegetarian="true">
+      <item>Vegetable Spring Rolls</item>
+      <price>5.00</price>
+    </entree>
+  </section>
+  <section name="Sushi">
+    <entree vegetarian="true">
+      <item>Cucumber Hossomaki (8 units)</item>
+      <price>5.00</price>
+    </entree>
+    <entree>
+      <item>Hossomaki (8 units)</item>
+      <price>5.00</price>
+    </entree>
+    <entree>
+      <item>Niguiri (8 units)</item>
+      <price>5.00</price>
+    </entree>
+    <entree>
+      <item>Uramaki (8 units)</item>
+      <price>5.00</price>
+    </entree>
+    <entree>
+      <item>Joe Salmon (8 units)</item>
+      <price>8.00</price>
+    </entree>
+    <entree>
+      <item>Sashimi (10 units)</item>
+      <price>7.00</price>
+    </entree>
+  </section>
+  <section name="Combos">
+    <entree>
+      <item>Hot Combo</item>
+      <price>14.00</price>
+    </entree>
+    <entree>
+      <item>Yokohama (serve 2 people)</item>
+      <price>28.00</price>
+    </entree>
+    <entree vegetarian="true">
+      <item>Veggie</item>
+      <price>12.00</price>
+    </entree>
+  </section>
+  <section name="Soft Drinks">
+    <entree>
+      <item>Guarana</item>
+      <price>2.50</price>
+    </entree>
+    <entree>
+      <item>Coke</item>
+      <price>2.00</price>
+    </entree>
+    <entree>
+      <item>Coke Zero</item>
+      <price>2.00</price>
+    </entree>
+    <entree>
+      <item>Diet Zero</item>
+      <price>2.00</price>
+    </entree>
+    <entree>
+      <item>Sparkling Water</item>
+      <price>1.50</price>
+    </entree>
+    <entree>
+      <item>Orange Juice</item>
+      <price>3.00</price>
+    </entree>
+  </section>
+  <section name="Alcoholic Beverages">
+    <entree>
+      <item>Beer</item>
+      <price>4.00</price>
+    </entree>
+    <entree>
+      <item>Red Wine (Glass)</item>
+      <price>4.50</price>
+    </entree>
+    <entree>
+      <item>White Wine</item>
+      <price>4.50</price>
+    </entree>
+  </section>
+</sushimenu>
