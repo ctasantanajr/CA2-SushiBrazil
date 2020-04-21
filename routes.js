@@ -1,6 +1,6 @@
 var express = require('express'),
 router = express.Router(),
-userCtrl = require('./user-controller'),
+//userCtrl = require('./user-controller'),
 itemCtrl = require('./item-controller');
 
 
@@ -10,21 +10,21 @@ router.get('/items/:item', itemCtrl.getItem);
 router.delete('/items/:item', itemCtrl.deleteItem);
 router.put('/items/:id', itemCtrl.updateItem);
 
-router.post('/users', userCtrl.createUser);
-router.get('/users', userCtrl.getUsers);
-router.get('/users/:id', userCtrl.getUser);
-router.delete('/users/:id', userCtrl.deleteUser);
-router.put('/users/:id', userCtrl.updateUser);
+//router.post('/users', userCtrl.createUser);
+//router.get('/users', userCtrl.getUsers);
+//router.get('/users/:id', userCtrl.getUser);
+//router.delete('/users/:id', userCtrl.deleteUser);
+//router.put('/users/:id', userCtrl.updateUser);
 
-module.exports.UPLOAD_PATH = 'uploads';
+//module.exports.UPLOAD_PATH = 'uploads';
 
-var multer = require('multer');
-var upload = multer({ dest: module.exports.UPLOAD_PATH });
-var imageCtrl = require('./image-controller');
+//var multer = require('multer');
+//var upload = multer({ dest: module.exports.UPLOAD_PATH });
+//var imageCtrl = require('./image-controller');
 
-router.post('/images', upload.single('image'), imageCtrl.uploadImage);
-router.get('/images', imageCtrl.getImages);
-router.get('/images/:id', imageCtrl.getImage);
-router.delete('/images/:id', imageCtrl.deleteImage);
+//router.post('/images', upload.single('image'), imageCtrl.uploadImage);
+//router.get('/images', imageCtrl.getImages);
+//router.get('/images/:id', imageCtrl.getImage);
+//router.delete('/images/:id', imageCtrl.deleteImage);
 
 module.exports = router;

@@ -7,7 +7,7 @@ mongoose = require('mongoose');
 
 var app = express();
 var port = 3000;
-var userCtrl = require('./user-controller');
+//var userCtrl = require('./user-controller');
 var itemCtrl = require('./item-controller');
 
 app.use(logger('dev'));
