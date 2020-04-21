@@ -10,4 +10,4 @@ var itemSchema = new mongoose.Schema({
     vegetarian: Boolean
 });
 
-module.exports = mongoose.model('Item', userSchema);
+module.exports = mongoose.model('Item', itemSchema);

@@ -21,7 +21,7 @@ exports.getItems = function(req, res) {
 };
 
 exports.getItem = function(req, res) {
-  Item.findOne({_id: req.params.id}, function (err, item) {
+  Item.findOne({item: req.params.item}, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
@@ -30,7 +30,7 @@ exports.getItem = function(req, res) {
 };
 
 exports.updateItem = function(req, res) {
-  Item.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, item) {
+  Item.findOneAndUpdate({item: req.params.item}, req.body, {new: true},function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
@@ -39,7 +39,7 @@ exports.updateItem = function(req, res) {
 };
 
 exports.deleteItem = function(req, res) {
-  Item.findByIdAndRemove(req.params.id, function (err, item) {
+  Item.findOneAndRemove({item: req.params.item}, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
