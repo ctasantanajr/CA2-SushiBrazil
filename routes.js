@@ -1,6 +1,14 @@
 var express = require('express'),
 router = express.Router(),
-userCtrl = require('./user-controller');
+userCtrl = require('./user-controller'),
+itemCtrl = require('./item-controller');
+
+
+router.post('/items', itemCtrl.createItem);
+router.get('/items', itemCtrl.getItems);
+router.get('/items/:id', itemCtrl.getItem);
+router.delete('/items/:id', itemCtrl.deleteItem);
+router.put('/items/:id', itemCtrl.updateItem);
 
 router.post('/users', userCtrl.createUser);
 router.get('/users', userCtrl.getUsers);
