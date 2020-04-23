@@ -23,13 +23,23 @@ exports.createItem = function(req, res) {
 };*/
 
 exports.getItems = function(req, res) {
+
+  Item.find({}, function (err, items) {
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(items.toString());
+  }); 
+};
+
+/*exports.getItems = function(req, res) {
   Item.find({}, function (err, items) {
     if (err) {
       res.status(400).json(err); 
     } 
     res.json(items);
   }); 
-};
+};*/
 
 exports.getItem = function(req, res) {
   Item.findOne({item: req.params.item}, function (err, item) {
