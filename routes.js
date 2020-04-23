@@ -3,7 +3,7 @@ router = express.Router(),
 itemCtrl = require('./item-controller');
 
 
-router.post('/items', itemCtrl.createItem);
+router.post('/post/json', itemCtrl.createItem);
 router.get('/items', itemCtrl.getItems);
 router.get('/items/:item', itemCtrl.getItem);
 router.delete('/items/:item', itemCtrl.deleteItem);

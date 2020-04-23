@@ -4,6 +4,7 @@ http = require("http"),
 express = require("express"),
 bodyParser = require("body-parser"),
 mongoose = require('mongoose'),
+assert = require('assert'),
 path = require('path'), //The path module provides utilities for working with file and directory paths
 expAutoSan = require('express-autosanitizer'); //This module does the sanitisation of user input on the client-side
 require('dotenv').config();
@@ -40,3 +41,4 @@ app.get('/', function(req, res){
     res.render('index');
 
 });
+

@@ -1,7 +1,7 @@
 var Item = require('./models/item');
 
 exports.createItem = function(req, res) { 
-    var newitem = new Item(req.body);
+    var newitem = new Item({item: req.body.item, price: req.body.price, section: req.body.sec_n});
     newitem.save(function (err, item) { 
         if (err) { 
             res.status(400).json(err);
@@ -10,6 +10,17 @@ exports.createItem = function(req, res) {
         res.json(item); 
 });
 };
+
+/*exports.createItem = function(req, res) { 
+    var newitem = new Item(req.body);
+    newitem.save(function (err, item) { 
+        if (err) { 
+            res.status(400).json(err);
+        }
+
+        res.json(item); 
+});
+};*/
 
 exports.getItems = function(req, res) {
   Item.find({}, function (err, items) {
