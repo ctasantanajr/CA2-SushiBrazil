@@ -6,7 +6,7 @@ function draw_table()
 		return $.ajax(
 		{
 			url: url,
-			type: 'GET',
+            type: 'GET',
 			cache: false,
 			success: function (html)
 			{

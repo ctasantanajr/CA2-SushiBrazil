@@ -28,7 +28,7 @@ exports.getItems = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(items.toString());
+    res.json(items);
   }); 
 };
 
