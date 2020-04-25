@@ -31,7 +31,7 @@ exports.getItems = function(req, res) {
     res.render('index', {
         data: items,
     })
-    res.redirect('back');
+    //res.redirect('back');
   }); 
 };
 
