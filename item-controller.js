@@ -11,23 +11,44 @@ exports.createItem = function(req, res) {
 });
 };
 
+/*exports.createItem = function(req, res) { 
+    var newitem = new Item(req.body);
+    newitem.save(function (err, item) { 
+        if (err) { 
+            res.status(400).json(err);
+        }
+        res.json(item); 
+});
+};*/
+
 exports.getItems = function(req, res) {
 
   Item.find({}, function (err, items) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(items);
+    res.render('index', {
+        data: items,
+    })
+    //res.redirect('back');
   }); 
 };
 
+/*exports.getItems = function(req, res) {
+  Item.find({}, function (err, items) {
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(items);
+  }); 
+};*/
 
 exports.getItem = function(req, res) {
   Item.findOne({item: req.params.item}, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+     res.redirect('back');
   }); 
 };
 
@@ -36,7 +57,7 @@ exports.updateItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+     res.redirect('back');
   }); 
 };
 
@@ -45,6 +66,6 @@ exports.deleteItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+    res.redirect('back');
   }); 
 };
