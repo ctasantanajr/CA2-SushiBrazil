@@ -28,7 +28,10 @@ exports.getItems = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(items.toString());
+    res.render('index', {
+        data: items,
+    })
+    res.redirect('back');
   }); 
 };
 
@@ -46,7 +49,7 @@ exports.getItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+     res.redirect('back');
   }); 
 };
 
@@ -55,7 +58,7 @@ exports.updateItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+     res.redirect('back');
   }); 
 };
 
@@ -64,6 +67,6 @@ exports.deleteItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-    res.json(item);
+    res.redirect('back');
   }); 
 };

@@ -49,7 +49,37 @@
                 <img src="./images/sushi.jpg" alt="Sushi" width="345" height="100">
 				<p class="lead">Select your items from the menu below.</p>
 			</div>
-			<div id="results" class="col-lg-8 text-center order-3"></div>
+			<table class="table col-lg-8 text-center" id="menuTable" class="indent">
+                    <thead>
+                        <tr scope="row">
+                            <th colspan="3">Sushi Brazil Menu</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Select</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       	<%
+                          data.forEach(function (items){ %>
+                            <tr>
+                                <td id="id" value = " <%= items._id %>"colspan="">
+                                 
+                                </td>
+                                <td colspan="">
+                                    <%= items.item %>
+                                </td>
+                                <td colspan="">
+                                    <%= items.price %>
+                                </td>
+                                <td colspan="">
+                                   
+                                </td>
+                            </tr>
+                   <%});%>
+                    </tbody>
+            </table>
 			<div class="col-lg-4 text-center order-2">
 				<form enctype="application/json" action="/post/json" method="post">
 					<div class="form-group">
