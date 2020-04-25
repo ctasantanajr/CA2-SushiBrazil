@@ -10,9 +10,9 @@
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/SushiBrazil.css" rel="stylesheet">
-    <script src="js/SushiBrazil.js"></script>
-    <script>
-        window.addEventListener("load", function() {
+	<script src="js/SushiBrazil.js"></script>
+	<script>
+		window.addEventListener("load", function() {
             document.forms[1].txtBillAmt.value = calculateBill('menuTable');
             document.querySelector("#calcBill").addEventListener("click", function() {
                 document.forms[1].txtBillAmt.value = calculateBill('menuTable');
@@ -21,19 +21,20 @@
                 highlightVegetarian('menuTable', this.checked);
             });
         });
-    </script>
+	</script>
 </head>
 
 <body>
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-		<div class="container">	<a class="navbar-brand" href="#">Sushi Brazil</a>
-        <img src="./images/bandeirabrasil.png" alt="Brazilian Flag" width="50" height="60">
+		<div class="container"> <a class="navbar-brand" href="#">Sushi Brazil</a>
+			<img src="./images/bandeirabrasil.png" alt="Brazilian Flag" width="50" height="60">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">	<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li class="nav-item active"><a class="nav-link"
+							href="#">Home<span class="sr-only">(current)</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -46,40 +47,41 @@
 		<div class="row">
 			<div class="col-lg-12 text-left">
 				<h1 class="mt-5">Welcome to Sushi Brazil</h1>
-                <img src="./images/sushi.jpg" alt="Sushi" width="345" height="100">
-				<p class="lead">Select your items from the menu below.</p>
+				<img src="./images/sushi.jpg" alt="Sushi" width="345" height="100">
+				<p class="lead">Check our new menu...</p>
 			</div>
 			<table class="table col-lg-8 text-center" id="menuTable" class="indent">
-                    <thead>
-                        <tr scope="row">
-                            <th colspan="3">Sushi Brazil Menu</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Select</th>
-                            <th scope="col">Item</th>
-                            <th scope="col">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       	<%
+				<thead>
+					<tr scope="row">
+						<th colspan="3">Sushi Brazil Menu</th>
+					</tr>
+					<tr>
+						<th scope="col">Section</th>
+						<th scope="col">Item</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
                           data.forEach(function (items){ %>
-                            <tr>
-                                <td id="id" value = " <%= items._id %>"colspan="">
-                                 
-                                </td>
-                                <td colspan="">
-                                    <%= items.item %>
-                                </td>
-                                <td colspan="">
-                                    <%= items.price %>
-                                </td>
-                                <td colspan="">
-                                   
-                                </td>
-                            </tr>
-                   <%});%>
-                    </tbody>
-            </table>
+					<tr>
+						<!--<td id="id" value=" <%= items._id %>" colspan="">
+
+						</td>-->
+                        <td colspan="">
+                            <%= items.section %>
+						</td>
+						<td colspan="">
+							<%= items.item %>
+						</td>
+						<td colspan="">
+							<%= items.price %>
+						</td>
+						
+					</tr>
+					<%});%>
+				</tbody>
+			</table>
 			<div class="col-lg-4 text-center order-2">
 				<form enctype="application/json" action="/post/json" method="post">
 					<div class="form-group">
@@ -94,40 +96,39 @@
 					<div class="form-group">
 						<input class="form-control" type="text" id="item" name="item" placeholder="Item">
 					</div>
-					<div class="form-group">
-						<input class="form-control" step="0.50" id="unitPrice" type="number" min="0" name="price" placeholder="Price">
+						<div class="form-group">
+							<input class="form-control" step="0.50" id="unitPrice" type="number" min="0" name="price" placeholder="Price">
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Add Item</button>
+							<button type="submit" class="btn btn-primary btn-block">Add Item</button>
 				</form>
-                    <button id="delete" class="btn btn-block btn-danger">Delete Item</button>
-                    <p class="text-muted">To delete an entree, select an item from the menu</p>
-                <form>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                                                        <span class="input-group-text">&euro;</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Total" name="txtBillAmt">
-                        <input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
+
+				<button type="submit" class="btn btn-block btn-danger">Delete Item</button>
+				<p class="text-muted">To delete an entree, select an item from the menu</p>
+
+				<form>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">&euro;</span>
+						</div>
+						<input type="text" class="form-control" aria-label="Total" name="txtBillAmt">
+						<input class="btn btn-block btn-secondary" type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill">
                     </div>
-                </form>
-                <form>
-                    <p> </p>
-                    <div class="input-group-text">
-                    <input type="checkbox" id="showVeg" aria-label="Checkbox for following text input"> Check here for vegetarian options<br>
+				</form>
+				<form>
+					<p> </p>
+					<div class="input-group-text">
+						<input type="checkbox" id="showVeg" aria-label="Checkbox for following text input"> Check here for vegetarian options<br>
                     </div>
-                </form>
+				</form>
 			</div>
 		</div>
 	</div>
 	<footer class="footer">
-		<div class="container">	<span class="text-muted">&copy; 2019</span>
+		<div class="container"> <span class="text-muted">&copy; 2019</span>
 		</div>
 	</footer>
-	<!-- Bootstrap core JavaScript -->
-	<script src="jquery/jquery.min.js"></script>
-	<script src="jquery/table.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    
+
+
 </body>
 
 </html>
