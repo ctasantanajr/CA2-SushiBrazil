@@ -38,4 +38,12 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
+const methodOverride = require("method-override");
+app.use(methodOverride("_method", {
+  methods: ["POST", "GET"]
+}));
+
+
+
 app.get('/', itemCtrl.getItems);
+app.delete('/items/:id/delete', itemCtrl.deleteItem);

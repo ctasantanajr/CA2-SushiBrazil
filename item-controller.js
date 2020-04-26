@@ -44,16 +44,19 @@ exports.updateItem = function(req, res) {
     if (err) {
       res.status(400).json(err);
     } 
-     res.redirect('back');
+     //res.redirect('back');
   }); 
 };
 
 exports.deleteItem = function(req, res) {
-  Item.findOneAndRemove({item: req.params.item}, function (err, item) {
+  Item.findByIdAndRemove(req.params.id, function (err, item) {
     if (err) {
       res.status(400).json(err);
     } 
      res.json(item); 
-    //res.redirect('back');
+     
+        //res.locals.redirect = "/";
+        
+        //res.locals.redirect('back');
   }); 
 };
